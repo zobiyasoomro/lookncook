@@ -4,6 +4,7 @@ use App\Http\Controllers\front\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\front\PageController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\front\ProfileController;
 
 
 //------------------------------------------ UI Pages Routes start here -------------------------------------------------
@@ -16,11 +17,16 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/services', 'services')->name('services');
     Route::get('/payment', 'payment')->name('payment');
     Route::get('/cart', 'cart')->name('cart');
+    Route::view('/profile', 'pages.profile')->name('profile');
 });
 
 
 Route::post('/contact-submit', [ContactController::class, 'store'])
     ->name('contacts.store');
+
+
+Route::put('/profile/update', [ProfileController::class, 'update'])
+    ->name('profile.update');
 
 //-------------------------------------------------------------- auth routes --------------------------------
 Route::get('/login', [AuthController::class, 'showAuthForm'])->name('login');
@@ -57,4 +63,14 @@ Route::middleware(['auth'])->group(function () {
             return view('admin.dashboard');
         })->name('dashboard');
     });
-}); 
+
+
+    // this is user profile pagees routes 
+    Route::view('/profile', 'pages.profile')->name('profile');
+
+    Route::put('/profile/update', [ProfileController::class, 'update'])
+        ->name('profile.update');
+
+    Route::delete('/profile/delete', [ProfileController::class, 'destroy'])
+        ->name('profile.delete');
+});

@@ -167,7 +167,7 @@
 
 
                             <li>
-                                <a class="dropdown-item text-danger logout-item" href="#">
+                                <a class="dropdown-item text-danger logout-item" href="/profile">
                                     <i class="bi bi-person-circle me-2"></i>
                                     My Profile
                                 </a>
