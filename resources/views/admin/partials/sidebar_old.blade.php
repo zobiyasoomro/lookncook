@@ -27,7 +27,7 @@
 
             <p class="text-xs font-bold text-gray-600 uppercase tracking-wider px-2 mb-2">Management</p>
             <nav class="space-y-1">
-                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-900 hover:text-white transition-all group">
+                <a href="{{ route('admin.banners.index') }}" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-gray-900 hover:text-white transition-all group">
                     <i class="fa-solid fa-images group-hover:text-[#ff2d7a]"></i>
                     <span>Banner Management</span>
                 </a>
@@ -61,6 +61,6 @@
 
     <!-- Quick Footer Context Inside Side Nav -->
     <div class="p-4 border-t border-gray-800 text-center text-xs text-gray-600">
-        &copy; 2026 Look n Cook Core Engine
+        &copy; 2025 Look n Cook Core Engine
     </div>
 </div>
